@@ -1,5 +1,3 @@
-使用参考 watermark-component-for-react
-
 页面中的使用方式
 
 ```html
@@ -24,7 +22,6 @@
 |    x    |       canvas横向偏移量      |     number     |         15         |
 |    y    |       canvas纵向偏移量       |     number     |         15         |
 
-
-#兼容性：
+## 兼容性：
 
 使用了[MutationObserver API](https://www.caniuse.com/?search=MutationObserver)，低版本浏览器无法使用，自行查看
