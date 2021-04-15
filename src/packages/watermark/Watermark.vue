@@ -10,22 +10,7 @@ export default {
   props: {
     options: {
       type: Object,
-      default: () => {
-        return {
-          width: '300', // canvas元素宽
-          height: '200', // canvas元素高
-          textAlign: 'left', // 文字对齐
-          textBaseline: 'bottom', // 基准线
-          font: '16px Microsoft Yahei', // 字体大小及样式
-          fillStyle: '#000', // 自定义水印的颜色
-          content: '内部文档，请勿外传', // 水印内容
-          globalAlpha: 0.1, // 设置图形和图像透明度的值
-          rotate: 16, // 文字旋转角度
-          zIndex: 1000, // 元素堆叠顺序
-          x:15,// canvas元素横向偏移量
-          y:15// canvas元素纵向向偏移量
-        }
-      }
+      default: () => { }
     }
   },
   data() {
@@ -38,18 +23,18 @@ export default {
   methods: {
     watermark(options) {
       const {
-        width,
-        height, 
-        textAlign,
-        textBaseline,
-        font,
-        fillStyle, 
-        content,
-        globalAlpha, 
-        rotate, 
-        zIndex, 
-        x,
-        y
+        width = '300', // canvas元素宽
+        height = '200', // canvas元素高
+        textAlign = 'left', // 文字对齐
+        textBaseline = 'bottom', // 基准线
+        font = '16px Microsoft Yahei', // 字体大小及样式
+        fillStyle = '#000', // 自定义水印的颜色
+        content = '内部文档，请勿外传', // 水印内容
+        globalAlpha = 0.1, // 设置图形和图像透明度的值
+        rotate = 16, // 文字旋转角度
+        zIndex = 1000, // 元素堆叠顺序
+        x = 15,// canvas元素横向偏移量
+        y = 15// canvas元素纵向向偏移量
       } = options;
       const container = document.querySelector('#watermark')
       let canvas = document.createElement('canvas');
@@ -61,7 +46,6 @@ export default {
       ctx.textBaseline = textBaseline;
       ctx.font = font;
       ctx.fillStyle = fillStyle;
-      ctx.background = 'red';
       ctx.rotate((Math.PI * rotate) / 180);
       ctx.fillText(content, x, y);
 
@@ -96,7 +80,7 @@ export default {
         let mo = new MutationObserver(() => {
           const __wm = document.querySelector('.__wm');
           // 只在__wm元素变动才重新调用
-          if ((__wm && (__wm.getAttribute('style') !== styleStr || __wm.classList.length>1)) || !__wm || container.style.position !== 'relative') {
+          if ((__wm && (__wm.getAttribute('style') !== styleStr || __wm.classList.length > 1)) || !__wm || container.style.position !== 'relative') {
             // 避免一直触发
             mo.disconnect();
             mo = null;

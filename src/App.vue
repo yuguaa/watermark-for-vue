@@ -1,10 +1,11 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <watermark >
+    <watermark :options="options">
       <template slot="content">
-      <template>
-         <slot name="content">55555555555555555555</slot>
+        <div>
+          内容区域
+        </div>
+      </template>
     </watermark >
   </div>
 </template>
@@ -16,7 +17,14 @@ export default {
   name: 'App',
   components: {
     Watermark
-  }
+  },
+  data() {
+    return {
+      options:{
+        content:123
+      }
+    }
+  },
 }
 </script>
 
