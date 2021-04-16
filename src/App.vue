@@ -2,7 +2,7 @@
   <div id="app">
     <watermark :options="options">
       <template slot="content">
-        <div>
+        <div class="container">
           内容区域
         </div>
       </template>
@@ -21,7 +21,8 @@ export default {
   data() {
     return {
       options:{
-        content:123
+        content:123,
+        src:require('@/assets/logo.png')
       }
     }
   },
@@ -36,5 +37,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.container{
+  position: relative;
+  height: 200px;
+  border: 1px solid red;
+  z-index: 200000000000000;
 }
 </style>

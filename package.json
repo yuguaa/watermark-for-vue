@@ -1,6 +1,6 @@
 {
   "name": "watermark-for-vue",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "yugu",
   "main": "./dist/watermark-for-vue.umd.min.js",
   "private": false,
