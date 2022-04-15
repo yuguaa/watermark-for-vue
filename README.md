@@ -28,28 +28,19 @@ export default {
 
 ```html
 <watermark :options="options">
-  <template slot="content">
     <div class="container">
       内容区域
     </div>
-  </template>
 </watermark>
 ```
 
 ## 注意事项
 
-默认使用文字填充水印，当传入 src 时水印内容为图片水印，此时应当设置内容 position：relative 配合 z-index 以解决水印层级问题。
+默认使用文字填充水印，当传入 src 时水印内容为图片水印，优先级高于文字水印。
 
 ```js
 options: {
   src: require("@/assets/logo.png");//https://avatars.githubusercontent.com/u/58333667?s=60&v=4
-}
-```
-
-```css
-.container {
-  position: relative;
-  z-index: 1001;
 }
 ```
 
