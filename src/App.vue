@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Watermark from './packages/watermark/Watermark.vue'
+import Watermark from 'watermark-for-vue'
 
 export default {
   name: 'App',
