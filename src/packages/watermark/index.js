@@ -1,4 +1,4 @@
-import Watermark from './Watermark'
+import Watermark from './Watermark.vue'
 
 /* istanbul ignore next */
 Watermark.install = function (app) {

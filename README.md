@@ -8,13 +8,17 @@ npm install watermark-for-vue
 
 ```js
 import Watermark from "watermark-for-vue";
-```
 
+Vue.use(Watermark)
+```
+也可以
 ```js
+import Watermark from "watermark-for-vue";
+
 export default {
   name: "App",
   components: {
-    Watermark,
+    Watermark:Watermark.Watermark,
   },
   data() {
     return {
