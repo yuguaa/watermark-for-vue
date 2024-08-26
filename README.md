@@ -18,7 +18,7 @@ import Watermark from "watermark-for-vue";
 export default {
   name: "App",
   components: {
-    Watermark:Watermark.Watermark,
+    Watermark,
   },
   data() {
     return {
